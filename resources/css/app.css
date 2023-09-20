@@ -1,3 +1,186 @@
-h1{
-    color: blueviolet;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+potta {
+    font-family: 'Potta One', cursive;
+}
+
+questrial {
+    font-family: 'Questrial', cursive;
+}
+
+poppins {
+    font-family: 'Poppins', cursive;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ///////////// VERSION PC \\\\\\\\\\\\ */
+
+/* MENU */
+
+header {
+    width: 95%;
+    margin: auto;
+    font-size: 21px;
+}
+
+header nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+header nav .logo {
+    width: 100%;
+    font-family: 'Potta One', cursive;
+    font-size: 34px;
+    color: #7ED957;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: end;
+    margin-right: 20px;
+    width: 100%;
+    font-family: 'Poppins', cursive;
+}
+
+header nav ul li {
+    margin-right: 20px;  
+}
+
+.btn_create_annonce {
+    margin-right: 60px;
+    background-color: #7ED957;
+    padding: 8px 30px;
+    border-radius: 10px;
+    color: black;
+}
+
+.btn_annonce {
+    transition: 0.5s;
+}
+
+.btn_annonce:hover {
+    transform: scale(1.05);
+}
+
+.link_register{
+    width: 90px;
+}
+
+.link_login {
+    width: 150px;
+}
+
+.register:hover {
+    font-weight: bold;
+}
+
+.login:hover {
+    font-weight: bold;
+}
+
+/* BANNIERE */
+
+.banniere {
+    width: 100%;
+    height: 360px;
+    background-color: #7ED957;
+    display: flex;
+}
+
+.contain_content_banniere {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.contain_img_planter{
+    width: 20%;
+}
+.img_planter{
+    width: 100%;
+    margin-top: 60px;
+}
+
+.contain_img_recever {
+    position: relative;
+    width: 20%;
+}
+.img_recever {
+    width: 100%;
+}
+
+.contain_text_banniere{
+    width: 40%;
+    margin-top: -60px;
+}
+
+.text_banniere{
+    width: 100%;
+    font-family: 'Poppins';
+    font-size: 40px;
+}
+
+.btn_donner{
+    display: inline-block;
+    padding: 8px 28px;
+    background-color: white;
+    border-radius: 6px;
+    font-family: "Poppins";
+    font-weight: bold;
+    margin-right: 20px;
+    border: 1px solid black;
+    transition: 0.5s;
+}
+
+.btn_donner:hover{
+    background-color: #7ED957;
+    color: black;
+    border: 1px solid black;
+    box-shadow: 2px 2px 1px black;
+}
+
+.btn_conseiller{
+    display: inline-block;
+    padding: 8px 28px;
+    background-color: black;
+    color: #7ED957;
+    border-radius: 6px;
+    font-family: "Poppins";
+    font-weight: bold;
+    border: 1px solid black;
+    transition: 0.5s;
+}
+
+.btn_conseiller:hover{
+    background-color: #7ED957;
+    color: black;
+    border: 1px solid black;
+    box-shadow: 2px 2px 1px black;
+}
+
+.contain_slogan{
+    position: absolute;
+    bottom: 50px;
+    left: -80px;
+    transform: rotate(-20deg);
+    font-family: 'Indie Flower', cursive;
+    font-weight: bold;
+    font-size: 21px;
 }
