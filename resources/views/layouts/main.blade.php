@@ -24,12 +24,24 @@
                 <div class="contain_slogan">
                     <p>Planter, donner</p>
                     <p>recever, conseiller</p>
-                 </div>
+                </div>
             </div>
-            
-           
-
         </div>
     </section>
-
+    <div class="first_parag">
+        <div class="img_cawottes">
+            <img src="./img/Cawottes.png" alt="Cawottes">
+            <h3>Les dons disponibles sur nôtre site</h3>
+        </div>
+        <div class="text_first_parag">
+            <p>
+                PlantToShare est un site de dons, vous pouvez mettre des annonces pour donner des fruits, légumes, plantes ou graines entre particulier.
+                Vous êtes intéressé par un produit ? Utilisez vos <span class="color_cawottes">Cawottes</span> pour vous positionner ou encore être prioritaire, on met en avant la <strong>générosité</strong> et le <strong>partage</strong> de connaissances afin de <strong>lutter contre la vie chère !</strong>
+            </p>
+            <img src="./img/Poppins.png" alt="Poppins">
+        </div>
+                
+            
+        
+    </div>
 @endsection
