@@ -239,3 +239,74 @@ header nav ul li {
     top: -130px;
     right: -240px;
 }
+
+.redirection_dons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins';
+    font-size: 20px;
+    background-color: #7ED957;
+    width: 24%;
+    margin: 60px auto -20px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.redirection_dons a {
+    display: inline-block;
+    color: white;
+    transition: 0.5s;
+}
+
+.redirection_dons a:hover {
+    transform: scale(1.05);
+}
+
+/* ANNONCE */
+
+.contain_annonce {
+    width: 20%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins";
+    height: 600px;
+}
+
+.contain_annonce h3 {
+    margin-top: -5px;
+    text-align: center;
+}
+.avatar_auteur, .note_etoile{
+    display: flex; 
+}
+
+.avatar_auteur {
+    margin-left: -16px;
+    width: 50%;
+}
+
+.avatar_auteur img {
+    width: 50px;
+}
+
+.note_etoile{
+    width: 70%;
+    justify-content: end;
+    margin-right: -14px;
+}
+
+.note_etoile img {
+    width: 50px;
+    margin-top: -4px;
+}
+
+.annonce_text {
+    margin-top: -70px;
+    display: flex;
+}
+
+.flex {
+    display: flex;
+}

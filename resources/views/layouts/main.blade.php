@@ -43,6 +43,73 @@
                 <img src="./img/Poppins.png" alt="Poppins">
             </div>
         </div>
+        <div class="redirection_dons">
+            <a href="">Retrouvez tous les dons en cliquant ici</a>
+        </div>
     </div>
+
+    <div class="flex">
+        <div class="contain_annonce">
+            <img src="./img/panier.png" alt="">
+            <div class="annonce_text">
+                <div class="avatar_auteur">
+                    <img src="./img/avatar.png" alt="">
+                    <p>Quentin.B</p>
+                </div>
+                <div class="note_etoile">
+                    <p>4.5</p>
+                    <img src="./img/etoile.png" alt="">
+                </div>
+            </div>
+            <h3>Ceci est un titre provisoire</h3>
+        </div>
+
+        <div class="contain_annonce">
+            <img src="./img/panier.png" alt="">
+            <div class="annonce_text">
+                <div class="avatar_auteur">
+                    <img src="./img/avatar.png" alt="">
+                    <p>Quentin.B</p>
+                </div>
+                <div class="note_etoile">
+                    <p>4.5</p>
+                    <img src="./img/etoile.png" alt="">
+                </div>
+            </div>
+            <h3>Ceci est un titre provisoire</h3>
+        </div>
+
+        <div class="contain_annonce">
+            <img src="./img/panier.png" alt="">
+            <div class="annonce_text">
+                <div class="avatar_auteur">
+                    <img src="./img/avatar.png" alt="">
+                    <p>Quentin.B</p>
+                </div>
+                <div class="note_etoile">
+                    <p>4.5</p>
+                    <img src="./img/etoile.png" alt="">
+                </div>
+            </div>
+            <h3>Ceci est un titre provisoire</h3>
+        </div>
+
+        <div class="contain_annonce">
+            <img src="./img/panier.png" alt="">
+            <div class="annonce_text">
+                <div class="avatar_auteur">
+                    <img src="./img/avatar.png" alt="">
+                    <p>Quentin.B</p>
+                </div>
+                <div class="note_etoile">
+                    <p>4.5</p>
+                    <img src="./img/etoile.png" alt="">
+                </div>
+            </div>
+            <h3>Ceci est un titre provisoire</h3>
+        </div>
+    </div>
+
+    
 
 @endsection
