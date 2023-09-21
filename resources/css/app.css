@@ -184,37 +184,58 @@ header nav ul li {
     font-weight: bold;
     font-size: 21px;
 }
+
+/* TEXT EN DESSOUS DE LA BANNIERE */
+
 .color_cawottes {
     color: orange;
     font-weight: bold;
 }
+
 .first_parag {
+    margin-top: 20px;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
+
+.contain_parag{
+    width: 60%;
+    margin: auto;
+}
+
 .img_cawottes{
     display: flex;
-    flex-direction: row;
     align-items: center;
-    margin-left: 20%;
 }
+
 .img_cawottes img{
-    width: 180px;
+    width: 130px;
 }
+
+.img_cawottes h3 {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Poppins';
+}
+
 .text_first_parag{
     display: flex;
     position: relative;
-    left: 30px;
 }
+
 .text_first_parag p{
-    margin-left: 22%;
-    margin-right: 22%;
-    margin-top: -35px;
+    width: 85%;
+    font-size: 24px;
+    font-family: "Poppins";
+    margin-top: -15px;
+    margin-left: 40px;
 }
+
 .text_first_parag img{
-    width: 18%;
+    width: 34%;
     position: absolute;
     top: -130px;
-    right: 50px;
-    
+    right: -240px;
 }
