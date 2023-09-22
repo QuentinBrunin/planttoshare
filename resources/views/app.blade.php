@@ -25,7 +25,7 @@
                 </li>
 
                 <li class="link_register">
-                    <a class="register" href=""> S'inscrire </a>
+                    <a class="register" href="{{route('register')}}"> S'inscrire </a>
                 </li>
 
                 <li>
@@ -33,7 +33,7 @@
                 </li>
 
                 <li class="link_login">
-                    <a class="login" href=""> Se connecter </a>
+                    <a class="login" href="{{route('login')}}"> Se connecter </a>
                 </li>
             </ul>
         </nav>
