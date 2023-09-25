@@ -15,6 +15,11 @@
 
     <body>
         <div class="bg_form_login">
+            @if (session('succes_inscription'))
+                <div class="alert_inscription alert-success">
+                    {{ session('succes_inscription') }}
+                </div>
+            @endif
             <div class="container_form_login">
                 <a class="fl_retour_register" href="{{route('main')}}">
                 <img src="./img/retour.png" alt="Précedent">

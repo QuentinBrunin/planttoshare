@@ -406,6 +406,13 @@ header nav ul li {
 .alert{
     color: red;
 }
+.alert_inscription{
+    color: black;
+    font-family: 'Poppins';
+    margin-bottom: 580px;
+    text-align: center;
+}
+
 .btn_connexion{
     width: 100%;
     margin-top: 10px;
