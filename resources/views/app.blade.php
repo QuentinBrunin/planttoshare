@@ -15,31 +15,33 @@
 
     <body>
         
-    <header>
-        <nav>
-            <div class="logo">PlantToShare</div>
-
-            <ul>
-                @auth
-                    <li class="btn_annonce">
-                        <a class="btn_create_annonce" href=""> Créer une annonce </a>
-                    </li>
-                    <li>{{ ucfirst (Auth::user()->prenom) }}.{{ substr(Auth::user()->nom, 0, 1) }}</li>
-                    @else
-                    <li class="link_register">
-                        <a class="register" href="{{route('register')}}"> S'inscrire </a>
-                    </li>
-                    
-                    <li class="link_login">
-                        <a class="login" href="{{route('login')}}"> Se connecter </a>
-                    </li>
-                    <li>
-                    /
-                    </li>
-                @endauth
-            </ul>
-        </nav>
-    </header>
+ <header>
+    <nav>
+        <div class="logo">PlantToShare</div>
+        <ul>
+            
+            @auth
+                    <li class="btn_annonce"><a class="btn_create_annonce" href="">Créer une annonce</a></li>
+                    <a onclick="openMenuDrop()" href="#" id="openMenu" class="menu_dropdown  "> {{ucfirst(auth()->user()->prenom) }}.{{ ucfirst(auth()->user()->nom[0]) }} </a>
+                        <div id="myMenuDropDown" class="user-dropdown">
+                            <img onclick="closeMenuDrop()" src="./img/croix.png" alt="Fermetture du menu" class="close" id="closeMenu">
+                            <ul>
+                                <li><a href="#">Mon profil</a></li>
+                                <li><a href="#">Mes annonces</a></li>
+                                <li><a href="#">Messagerie</a></li>
+                                <hr>
+                                <li><a href="{{ route('logout') }}">Déconnexion</a></li>
+                            </ul>
+                    </div>
+            @else
+                <li class="btn_annonce"><a class="btn_create_annonce" href="#">Créer une annonce</a></li>
+                <li><a href="{{ route('register') }}">S'inscrire </a></li>
+                <li> / </li>
+                <li><a href="{{ route('login') }}">Se connecter</a></li>
+            @endauth
+        </ul>
+    </nav>
+</header>
 
     <div>
         @yield('content')

@@ -545,3 +545,67 @@ header nav ul li {
 .login_eye{
     bottom: -6px;
 }
+
+/* CSS menu déoulant*/
+.user-dropdown {
+    margin-top: 73.3px;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    border-bottom-left-radius: 70%;
+    border-top-left-radius: 10%;
+    z-index: 1;
+    top: 0;
+    right: -250px;
+    background-color: orange;
+    padding-top: 60px;
+    transition: right 0.5s ease;
+}
+
+/* Sidenav menu links */
+.user-dropdown a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.user-dropdown a:hover {
+    color: #111;
+}
+
+.user-dropdown ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Active class */
+.user-dropdown.active {
+    right: 0;
+}
+
+/* Close btn */
+.user-dropdown.close {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    font-size: 36px;
+}
+.user-dropdown img{
+    cursor: pointer;
+    transition: 0.2s;
+}
+.user-dropdown img:hover {
+    transform: scale(1.1);
+}
+.user-dropdown ul hr{
+    height: 1px;
+    width:200px; 
+    background-color: black;
+    border: none;
+}
