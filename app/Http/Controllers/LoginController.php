@@ -24,4 +24,10 @@ class LoginController extends Controller
         // Si l'authentification échoue, redirigez l'utilisateur vers le formulaire de connexion avec un message d'erreur.
         return redirect()->route('login')->with('error', 'Email ou mot de passe incorrect.');
     }
+
+    public function logout()
+    {
+        Auth::logout(); 
+        return redirect()->route('main'); 
+    }
 }

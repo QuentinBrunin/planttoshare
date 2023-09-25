@@ -14,11 +14,6 @@
     </head>
 
     <body>
-    @if ($errors->has('password'))
-    <div class="alert_inscrption alert-danger">
-        {{ $errors->first('password') }}
-    </div>
-@endif
     <div class="bg_form_register">
         <div class="container_form_register">
             <a class="fl_retour_register" href="{{route('main')}}">
@@ -49,7 +44,11 @@
                         <i id="togglePassword" class="fas fa-eye"></i>
                     </div>
                 </div>
-            
+                    @if ($errors->has('password'))
+                        <div class="alert_inscrption alert-danger">
+                            {{ $errors->first('password') }}
+                        </div>
+                    @endif
                 <button type="submit" class="btn_inscription">
                     Inscris toi
                 </button>
