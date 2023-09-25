@@ -87,6 +87,10 @@ header nav ul li {
     width: 150px;
 }
 
+.login, .register{
+    color: black;
+}
+
 .register:hover {
     font-weight: bold;
 }
@@ -185,7 +189,7 @@ header nav ul li {
     font-size: 21px;
 }
 
-/* TEXT EN DESSOUS DE LA BANNIERE */
+/* TEXT EN DESSOUS DE LA BANNIERE PRINCIPAL */
 
 .color_cawottes {
     color: orange;
@@ -193,7 +197,7 @@ header nav ul li {
 }
 
 .first_parag {
-    margin-top: 20px;
+    margin: 60px 0px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -310,6 +314,43 @@ header nav ul li {
 .flex {
     display: flex;
 }
+
+
+/* PARTIE BLOG BANNIERE */
+
+.container_banniere_blog{
+    width: 100%;
+    background-color: #7ED957;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins';
+    margin-bottom: 20px;
+    padding: 30px 0px;
+}
+
+.container_banniere_blog h2{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.contain_text_banniere_blog{
+    width: 60%;
+    font-size: 20px;
+    margin-left: 100px;
+    display: flex;
+}
+
+.container_banniere_blog img{
+    width: 20%;
+    margin-top: -40px;
+}
+
+/* PARTIE BLOG COPIER DE ANNONCE */
+.container_blog {
+    margin: 60px 0 -30px 0;
+}
+
 /* css registerForm*/
 .bg_form_login{
     background-color: #7ED957;
