@@ -43,6 +43,23 @@
         @yield('content')
     </div>
 
+    <footer>
+        <div class="container_content_footer">
+            <div class="contain_links_footer_left">
+                <a href="">Accueil |</a>
+                <a href="">CGU |</a>
+                <a href="">Cookies</a>
+            </div>
+            <div class="contain_links_footer_middle">
+                <a href="">PlantToShare 2023 - Tous droits réservés |</a>
+                <a href="">FAQ</a>
+            </div>
+            <div class="contain_links_footer_right">
+                <a href=""><img class="icon_facebook" src="./img/facebook.png" alt=""></a>
+                <a href=""><img src="" alt=""></a>
+            </div>
+        </div>
+    </footer>
 
     </body>
 
