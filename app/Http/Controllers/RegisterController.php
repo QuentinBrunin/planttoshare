@@ -28,8 +28,8 @@ class RegisterController extends Controller
         ]);
 
     
-        return redirect()->route('layouts.main')
-            ->with('Vôtre demande de création de compte est acceptée,veuillez vous connecter ');
+        return redirect()->route('login')
+            ->with('succes_inscription','Vôtre demande de création de compte est acceptée,veuillez vous connecter ');
     }
 
 

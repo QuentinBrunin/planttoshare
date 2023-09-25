@@ -16,7 +16,6 @@
                     <a class="btn_donner" href="">Donner</a>
                     <a class="btn_conseiller" href="">Conseiller</a>
                 </div>
-
             </div>
 
             <div class="contain_img_recever">
