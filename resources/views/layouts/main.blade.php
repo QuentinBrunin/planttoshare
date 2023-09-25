@@ -29,6 +29,8 @@
         </div>
     </section>
 
+    <!-- PARAGRAGE APRES BANNIERE PRINCIPALE -->
+
     <div class="first_parag">
         <div class="contain_parag">
             <div class="img_cawottes">
@@ -47,6 +49,8 @@
             <a href="">Retrouvez tous les dons en cliquant ici</a>
         </div>
     </div>
+
+    <!-- ANNONCE -->
 
     <div class="flex">
         <div class="contain_annonce">
@@ -110,6 +114,89 @@
         </div>
     </div>
 
-    
+    <!-- Partie Blog -->
+
+    <div class="container_banniere_blog">
+        <h2>Vous pouvez participer à l'alimentation de notre blog</h2>
+        <div class="contain_text_banniere_blog">
+            <p>Partagez vos astuces/conseils pour votre potager, tout au long de l’année chaque membre peut créer un article de blog, après validation de notre part, il sera mis en ligne ! Participez régulièrement et vous obtiendrez un badge de confiance communautaire, ainsi que la mise en ligne automatique de vos articles !</p>
+            <img src="./img/ordi.png" alt="">
+        </div>
+    </div>
+
+    <div class="first_parag container_blog">
+        <div class="contain_parag">
+            <div class="img_cawottes">
+                <img src="./img/Cawottes.png" alt="Cawottes">
+                <h3>Retrouvez les conseils de nos membres</h3>
+            </div>
+        </div>
+      
+    </div>
+
+    <!-- ARTICLE BLOG -->
+
+    <div class="flex">
+        <div class="contain_annonce">
+            <img src="./img/panier.png" alt="">
+            <div class="annonce_text">
+                <div class="avatar_auteur">
+                    <img src="./img/avatar.png" alt="">
+                    <p>Quentin.B</p>
+                </div>
+                <div class="note_etoile">
+                    <p>4.5</p>
+                    <img src="./img/etoile.png" alt="">
+                </div>
+            </div>
+            <h3>Ceci est un titre provisoire</h3>
+        </div>
+
+        <div class="contain_annonce">
+            <img src="./img/panier.png" alt="">
+            <div class="annonce_text">
+                <div class="avatar_auteur">
+                    <img src="./img/avatar.png" alt="">
+                    <p>Quentin.B</p>
+                </div>
+                <div class="note_etoile">
+                    <p>4.5</p>
+                    <img src="./img/etoile.png" alt="">
+                </div>
+            </div>
+            <h3>Ceci est un titre provisoire</h3>
+        </div>
+
+        <div class="contain_annonce">
+            <img src="./img/panier.png" alt="">
+            <div class="annonce_text">
+                <div class="avatar_auteur">
+                    <img src="./img/avatar.png" alt="">
+                    <p>Quentin.B</p>
+                </div>
+                <div class="note_etoile">
+                    <p>4.5</p>
+                    <img src="./img/etoile.png" alt="">
+                </div>
+            </div>
+            <h3>Ceci est un titre provisoire</h3>
+        </div>
+
+        <div class="contain_annonce">
+            <img src="./img/panier.png" alt="">
+            <div class="annonce_text">
+                <div class="avatar_auteur">
+                    <img src="./img/avatar.png" alt="">
+                    <p>Quentin.B</p>
+                </div>
+                <div class="note_etoile">
+                    <p>4.5</p>
+                    <img src="./img/etoile.png" alt="">
+                </div>
+            </div>
+            <h3>Ceci est un titre provisoire</h3>
+        </div>
+    </div>
+
 
 @endsection
