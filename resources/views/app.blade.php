@@ -19,7 +19,6 @@
     <nav>
         <div class="logo">PlantToShare</div>
         <ul>
-            
             @auth
                     <li class="btn_annonce"><a class="btn_create_annonce" href="">Créer une annonce</a></li>
                     <a onclick="openMenuDrop()" href="#" id="openMenu" class="menu_dropdown  "> {{ucfirst(auth()->user()->prenom) }}.{{ ucfirst(auth()->user()->nom[0]) }} </a>
@@ -32,7 +31,7 @@
                                 <hr>
                                 <li><a href="{{ route('logout') }}">Déconnexion</a></li>
                             </ul>
-                    </div>
+                        </div>
             @else
                 <li class="btn_annonce"><a class="btn_create_annonce" href="#">Créer une annonce</a></li>
                 <li><a href="{{ route('register') }}">S'inscrire </a></li>
