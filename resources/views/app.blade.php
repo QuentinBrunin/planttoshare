@@ -20,6 +20,10 @@
         <div class="logo">PlantToShare</div>
         <ul>
             @auth
+                @if(auth()->user()->admin)
+                        <li><a href="{{ route('adminRedirect') }}">Page Admin</a></li>
+                @endif
+
                     <li class="btn_annonce"><a class="btn_create_annonce" href="">Créer une annonce</a></li>
                     <a onclick="openMenuDrop()" href="#" id="openMenu" class="menu_dropdown  "> {{ucfirst(auth()->user()->prenom) }}.{{ ucfirst(auth()->user()->nom[0]) }} </a>
                         <div id="myMenuDropDown" class="user-dropdown">
@@ -33,11 +37,12 @@
                             </ul>
                         </div>
             @else
-                <li class="btn_annonce"><a class="btn_create_annonce" href="#">Créer une annonce</a></li>
-                <li><a href="{{ route('register') }}">S'inscrire </a></li>
+                <li class="btn_annonce"><a class="btn_create_annonce" href="login">Créer une annonce</a></li>
+                <li class="register"><a href="{{ route('register') }}">S'inscrire </a></li>
                 <li> / </li>
-                <li><a href="{{ route('login') }}">Se connecter</a></li>
+                <li class="login"><a href="{{ route('login') }}">Se connecter</a></li>
             @endauth
+
         </ul>
     </nav>
 </header>
