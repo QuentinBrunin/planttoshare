@@ -635,6 +635,9 @@ footer a{
 .user-dropdown img{
     cursor: pointer;
     transition: 0.2s;
+    float: right;
+    margin-top: -50px;
+    margin-right: 10px;
 }
 .user-dropdown img:hover {
     transform: scale(1.1);

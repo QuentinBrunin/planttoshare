@@ -3,6 +3,7 @@
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,7 @@ Route::get('/login', [LoginController::class, 'index']);
 
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
+Route::middleware(['auth', 'admin'])->group(function () {
+    // Cette route ne sera accessible que pour les utilisateurs authentifiés en tant qu'administrateurs.
+    Route::get('/admin', [AdminController::class, 'index'])->name('adminRedirect');
+});
