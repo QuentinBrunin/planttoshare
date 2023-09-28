@@ -14,17 +14,16 @@ return new class extends Migration
         Schema::create('annonces', function (Blueprint $table) {
             $table->id();
             $table->string('titre',55);
-            $table->dateTime('Date-creation');
-            $table->unsignedBigInteger ('produit_id');
-            $table->foreign('produit_id')->references('id')->on('produits');
-            $table->unsignedBigInteger('localisation');
-            $table->foreign('localisation')->references('id')->on('user');
+            $table->string('localisation')->nullable();
             $table->string('image')->nullable();
-            $table->unsignedBigInteger('createur');
+            $table->unsignedBigInteger('createur')->nullable();
             $table->foreign('createur')->references('id')->on('user');
             $table->timestamps();
+            $table->text('descriptif',550);
+            $table->string('etat');
         });
     }
+
 
     /**
      * Reverse the migrations.

@@ -9,10 +9,6 @@ class Categorie extends Model
 {
     use HasFactory;
 
-    public function produits()
-    {
-        return $this->hasMany(Produit::class);
-    }
     public function annonces()
     {
         return $this->hasMany(Annonce::class);

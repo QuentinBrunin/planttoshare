@@ -25,7 +25,7 @@
                         <li><a href="{{ route('adminRedirect') }}">Page Admin</a></li>
                 @endif
 
-                    <li class="btn_annonce"><a class="btn_create_annonce" href="">Créer une annonce</a></li>
+                    <li class="btn_annonce"><a class="btn_create_annonce" href="{{ route('createAnnonce')}}">Créer une annonce</a></li>
                     <a onclick="openMenuDrop()" href="#" id="openMenu" class="menu_dropdown  "> {{ucfirst(auth()->user()->prenom) }}.{{ ucfirst(auth()->user()->nom[0]) }} </a>
                         <div id="myMenuDropDown" class="user-dropdown">
                             <img onclick="closeMenuDrop()" src="./img/croix.png" alt="Fermetture du menu" class="close" id="closeMenu">

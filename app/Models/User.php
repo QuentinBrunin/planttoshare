@@ -49,8 +49,4 @@ class User extends Authenticatable
     {
         return $this->hasMany(Annonce::class, 'localisation');
     }
-    public function produits(){
-        return $this->hasMany(Produit::class);
-    }
-    
 }
