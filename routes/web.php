@@ -26,7 +26,6 @@ Route::get('/', function () {
 })->name('main');
 
 Route::get('/register',[RegisterController::class,'index'])->name('register');
-
 Route::post('/register',[RegisterController::class,'store']);
 
 Route::get('/login', [LoginController::class, 'index']);
@@ -36,4 +35,7 @@ Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 Route::middleware(['auth', 'admin'])->group(function () {
     // Cette route ne sera accessible que pour les utilisateurs authentifiés en tant qu'administrateurs.
     Route::get('/admin', [AdminController::class, 'index'])->name('adminRedirect');
+    Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin/dashboard');
+    
 });
+
