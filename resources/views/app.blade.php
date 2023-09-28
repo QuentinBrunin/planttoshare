@@ -19,7 +19,6 @@
     <nav>
         <div class="logo">PlantToShare</div>
         <ul>
-            
             @auth
                 @if(auth()->user()->admin)
                         <li><a href="{{ route('adminRedirect') }}">Page Admin</a></li>
@@ -36,7 +35,7 @@
                                 <hr>
                                 <li><a href="{{ route('logout') }}">Déconnexion</a></li>
                             </ul>
-                    </div>
+                        </div>
             @else
                 <li class="btn_annonce"><a class="btn_create_annonce" href="login">Créer une annonce</a></li>
                 <li class="register"><a href="{{ route('register') }}">S'inscrire </a></li>
