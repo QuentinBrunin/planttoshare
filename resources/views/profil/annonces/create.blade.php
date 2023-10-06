@@ -17,10 +17,10 @@
         <div class="bg_form_register">
             <div class="container_form_register">
                 <a class="fl_retour_register" href="{{route('main')}}">
-                    <img src="./img/retour.png" alt="Précedent">
+                    <img src="/img/retour.png" alt="Précedent">
                 </a>
                 <a class="logo_form_register" href="{{route('main')}}">
-                    <img src="./img/Poppins.png" alt="Logo-site">
+                    <img src="/img/Poppins.png" alt="Logo-site">
                 </a>
                 <h2>Créer une annonce</h2>
 
@@ -73,4 +73,3 @@
     </body>
 
 </html>
-

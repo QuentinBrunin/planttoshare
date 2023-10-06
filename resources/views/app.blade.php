@@ -9,13 +9,14 @@
             @show
     </title>  
 
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     </head>
 
     <body>
         
- <header>
+<header>
     <nav>
         <div class="logo">PlantToShare</div>
         <ul>
@@ -24,13 +25,13 @@
                         <li><a href="{{ route('adminRedirect') }}">Page Admin</a></li>
                 @endif
 
-                    <li class="btn_annonce"><a class="btn_create_annonce" href="{{ route('createAnnonce')}}">Créer une annonce</a></li>
+                    <li class="btn_annonce"><a class="btn_create_annonce" href="{{ url('profil/annonce/create')}}">Créer une annonce</a></li>
                     <a onclick="openMenuDrop()" href="#" id="openMenu" class="menu_dropdown  "> {{ucfirst(auth()->user()->prenom) }}.{{ ucfirst(auth()->user()->nom[0]) }} </a>
                         <div id="myMenuDropDown" class="user-dropdown">
                             <img onclick="closeMenuDrop()" src="./img/croix.png" alt="Fermetture du menu" class="close" id="closeMenu">
                             <ul>
-                                <li><a href="#">Mon profil</a></li>
-                                <li><a href="#">Mes annonces</a></li>
+                                <li><a href="{{ route('dashboard_profil', ['id' => auth()->user()->id]) }}">Mon profil</a></li>
+                                <li><a href="{{ route ('mesAnnonces') }}">Mes annonces</a></li>
                                 <li><a href="#">Messagerie</a></li>
                                 <hr>
                                 <li><a href="{{ route('logout') }}">Déconnexion</a></li>

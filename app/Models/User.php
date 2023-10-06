@@ -22,9 +22,12 @@ class User extends Authenticatable
         'prenom',
         'email',
         'password',
-        'admin'
+        'admin',
+        'ville', 
+        'code_postal',
     ];
 
+    protected $primaryKey = 'id';
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -47,6 +50,7 @@ class User extends Authenticatable
 
     public function annonces()
     {
-        return $this->hasMany(Annonce::class, 'localisation');
+        return $this->hasMany(Annonce::class, 'createur'); 
     }
+
 }
