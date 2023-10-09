@@ -9,7 +9,9 @@
             @show
     </title>  
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    @vite(['resources/css/app.css','resources/js/app.js'])
+
 
     </head>
 
@@ -68,6 +70,7 @@
                     </div>
                 </div>
             </footer>
-        </div>    
+        </div>  
+          
     </body>
 </html>

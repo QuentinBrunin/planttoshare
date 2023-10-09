@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="form-group-update">
                                     <label for="image">Image</label>
-                                    <input type="file" id="image" class="form-control-update" name="image" accept="image/*" onchange="previewImage(this,{{$annonce->id}});">
+                                    <input type="file" id="image" class="form-control-update" name="image" accept="image/*" onchange="previewImage(this.$annonce(id));">
                                     <img class="image_pre" id="image-preview-{{$annonce->id}}" style="width: 25vh" src="{{ asset('/storage/' . $annonce->image) }}" alt="Image de l'annonce">
                                 </div>
                                 <div class="form-group-update">
