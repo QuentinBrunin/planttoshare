@@ -9,12 +9,7 @@
             @show
     </title>  
 
-<<<<<<< HEAD
     @vite(['resources/css/app.css','resources/css/app_mobile.css', 'resources/js/app.js'])
-=======
-
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
->>>>>>> 5245bef915ba5a3dfe3a95f340f4d7ccfef1193d
 
     </head>
 
@@ -34,8 +29,8 @@
                                     <div id="myMenuDropDown" class="user-dropdown">
                                         <img onclick="closeMenuDrop()" src="./img/croix.png" alt="Fermetture du menu" class="close" id="closeMenu">
                                         <ul>
-                                            <li><a href="#">Mon profil</a></li>
-                                            <li><a href="#">Mes annonces</a></li>
+                                            <li><a href="{{route('dashboard_profil',['id =>Auth::user()->id']) }}">Mon profil</a></li>
+                                            <li><a href="{{route('mesAnnonces')}}">Mes annonces</a></li>
                                             <li><a href="#">Messagerie</a></li>
                                             <hr>
                                             <li><a href="{{ route('logout') }}">Déconnexion</a></li>
