@@ -1,0 +1,32 @@
+@media screen and (max-width: 900px) {
+    .version_pc{
+        display: none;
+    }
+
+    .verison_mobile{
+        display: block;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .contain_home{
+        background-color:#7ED957;
+        height: 500px;
+        border-bottom-left-radius: 10%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+
+    .home_text{
+        position: relative;
+        margin-left: 16px;
+        z-index: 99;
+        color: white;
+        font-size: 16px;
+        font-family: 'Poppins';
+    }
+}
+
+
