@@ -31,7 +31,12 @@ a {
 /* ///////////// VERSION PC \\\\\\\\\\\\ */
 
 /* MENU */
+@media (min-width: 1200px) {
 
+.version_mobile{
+    display: none;
+}    
+    
 header {
     width: 95%;
     margin: auto;
@@ -251,7 +256,7 @@ header nav ul li {
     font-family: 'Poppins';
     font-size: 20px;
     background-color: #7ED957;
-    width: 24%;
+    width: 450px;
     margin: 60px auto -20px;
     height: 40px;
     border-radius: 10px;
@@ -648,6 +653,9 @@ footer a{
     background-color: black;
     border: none;
 }
+
+
+}
 /*css Mon profil*/
 .container-profil {
     display: flex;
@@ -773,7 +781,9 @@ border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.5);
     
 }
+
 #titlemodal{
     text-align: center;
     
 }
+
