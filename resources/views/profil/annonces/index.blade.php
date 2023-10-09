@@ -25,9 +25,10 @@
             <li>
                 <h2>{{$annonce->titre}}</h2>
                 <p>{{$annonce->descriptif}}</p>
+                <p>{{$annonce->etat}}</p>
                 <img style="width: 25vh" src="{{ asset('/storage/' . $annonce->image) }}" alt="Image de l'annonce">
-                <a href="#modaldelete-{{$annonce->id}}" class="js-modal-delete" data-annonce-id="{{$annonce->id}}">Supprimer</a>
-                <a href="#modal-{{$annonce->id}}" class="js-modal" data-annonce-id="{{$annonce->id}}">modifier</a>
+                <a  class="js-modal-delete" data-annonce-id="{{$annonce->id}}">Supprimer</a>
+                <a  class="js-modal" data-annonce-id="{{$annonce->id}}">modifier</a>
         
                 <aside id="modaldelete-{{$annonce->id}}" class="modaldelete" aria-hidden="true" role="dialog" aria-labelledby="titlemodaldelete" >
                     <div class="modal-wrapper-delete" >
@@ -150,7 +151,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
-
 
 // afficher l'image modifier dans le formulaire
 

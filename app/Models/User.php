@@ -24,7 +24,7 @@ class User extends Authenticatable
         'password',
         'admin',
         'ville', 
-        'code_postal',
+        'code_postal'
     ];
 
     protected $primaryKey = 'id';

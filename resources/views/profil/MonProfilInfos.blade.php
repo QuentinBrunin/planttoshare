@@ -1,6 +1,11 @@
 @extends ('admin.index')
 
 @section ('content')
+        @if(session('message_complete_profil'))
+        <div class="alert alert-success">
+            {{ session('message_complete_profil') }}
+        </div>
+        @endif
     @if (session('succes_update_profil'))
         <div class="alert alert-success">
             {{ session('succes_update_profil') }}
@@ -9,9 +14,9 @@
 
     <h2 class="monProfil">Mon profil</h2>
     <div class="container-profil">
-        <form class="form_profil" method="POST" enctype="multipart/form-data">
+        <form class="form_profil" method="POST" enctype="multipart/form-data" action="{{ route('modifierProfil', ['id' => $userId]) }}">
             @csrf
-
+            @method('PUT')
             <div class="form-group">
                 <label for="Nom">Nom</label>
                 <input type="text" id="Nom" class="form-control" name="nom" readonly required autofocus value="{{ Auth::user()->nom }}">

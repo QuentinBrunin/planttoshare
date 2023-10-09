@@ -17,8 +17,16 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            // L'utilisateur est authentifié, redirigez-le vers la page souhaitée.
-            session(['user_id' => Auth::user()->id]);
+            $user = Auth::user();
+
+            // Vérifiez si l'utilisateur a complété son profil
+            if (!$user->profil_completed) {
+                // Redirigez l'utilisateur vers la page de profil pour compléter son profil
+                session(['user_id' => $user->id]);
+                return redirect()->route('InfosProfil')->with('message_complete_profil', 'Bienvenue! Veuillez compléter votre profil afin de finaliser votre inscription.');
+            }
+
+            // Si le profil est complété ou non requis, redirigez l'utilisateur vers la page souhaitée.
             return redirect()->intended('/');
         }
 

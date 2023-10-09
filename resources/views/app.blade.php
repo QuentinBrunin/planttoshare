@@ -31,7 +31,7 @@
                                     <div id="myMenuDropDown" class="user-dropdown">
                                         <img onclick="closeMenuDrop()" src="./img/croix.png" alt="Fermetture du menu" class="close" id="closeMenu">
                                         <ul>
-                                            <li><a href="{{route('dashboard_profil') }}">Mon profil</a></li>
+                                            <li><a href="{{route('InfosProfil') }}">Mon profil</a></li>
                                             <li><a href="{{route('mesAnnonces')}}">Mes annonces</a></li>
                                             <li><a href="#">Messagerie</a></li>
                                             <hr>

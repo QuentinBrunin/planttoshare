@@ -787,3 +787,6 @@ border-radius: 10px;
     
 }
 
+.js-modal,.js-modal-delete{
+    cursor: pointer;
+}

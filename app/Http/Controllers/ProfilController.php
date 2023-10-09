@@ -7,18 +7,14 @@ use App\Models\User;
 
 class ProfilController extends Controller
 {
-    public function completerProfil(){
-        
-        return view('profil.validationPremiereConnexion');
-    }
 
-    public function dashboard()
+    public function index()
     {
         $userId = session('user_id');
-        return view('profil.MonProfilDashboard', ['id' => $userId]);
+        return view('profil.MonProfilInfos', ['userId' => $userId]);
     }
 
-    public function update(Request $request)
+    public function update(Request $request,$userId)
     {
         $data = $request->validate([
             'adresse' => 'required|max:550',
@@ -26,7 +22,7 @@ class ProfilController extends Controller
             'ville' => 'required|max:250',
             
         ]);
-        $userId = session('user_id');
+        $user = User::findOrFail($userId);
 
         $user = User::findOrFail($userId);
 
@@ -34,9 +30,10 @@ class ProfilController extends Controller
         $user->code_postal = $data['code_postal'];
         $user->ville = $data['ville'];
 
+        $user->profil_completed = true;
         $user->save();
 
-        return redirect()->route('dashboard_profil', ['id' => $userId])
+        return redirect()->route('InfosProfil')
         ->with('succes_update_profil', 'Votre profil a été mis à jour!');
     }
 }
