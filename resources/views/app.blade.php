@@ -9,12 +9,7 @@
             @show
     </title>  
 
-<<<<<<< HEAD
-    @vite(['resources/css/app.css','resources/css/app_mobile.css', 'resources/js/app.js'])
-=======
-
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
->>>>>>> 5245bef915ba5a3dfe3a95f340f4d7ccfef1193d
+    @vite(['resources/css/app.css','resources/css/app_mobile.css', 'resources/js/app.js']
 
     </head>
 
@@ -89,6 +84,7 @@
         <div class="logo">PlantToShare</div>
         <ul>
             @auth
+           
                 @if(auth()->user()->admin)
                         <li><a href="{{ route('adminRedirect') }}">Page Admin</a></li>
                 @endif
