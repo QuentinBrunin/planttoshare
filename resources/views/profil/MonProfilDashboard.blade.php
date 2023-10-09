@@ -1,21 +1,9 @@
 @extends ('admin.index')
 
 @section ('content')
-    @if (session('succes_update_annonce'))
+    @if (session('succes_update_profil'))
         <div class="alert alert-success">
-            {{ session('succes_update_annonce') }}
-        </div>
-    @endif
-
-    @if(session('successSupression'))
-        <div class="alert alert-success">
-            {{ session('successSupression') }}
-        </div>
-    @endif
-
-    @if(session('errorSupression'))
-        <div class="alert alert-success">
-            {{ session('errorSupression') }}
+            {{ session('succes_update_profil') }}
         </div>
     @endif
 
