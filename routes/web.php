@@ -45,7 +45,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 Route::middleware(['auth',])->group(function () {
 
-    Route::get('/dashboard/profil/{id}', [ProfilController::class, 'dashboard'])->name('dashboard_profil');
+    Route::get('/dashboard/profil', [ProfilController::class, 'dashboard'])->name('dashboard_profil');
     Route::post('/dashboard/profil/{id}', [ProfilController::class, 'update'])->name('modifierProfil');
 
     Route::get('/completerProfil', [ProfilController::class, 'completerProfil'])->name('completerProfil');

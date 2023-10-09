@@ -18,6 +18,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             // L'utilisateur est authentifié, redirigez-le vers la page souhaitée.
+            session(['user_id' => Auth::user()->id]);
             return redirect()->intended('/');
         }
 
