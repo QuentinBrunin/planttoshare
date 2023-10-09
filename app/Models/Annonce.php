@@ -18,8 +18,10 @@ class Annonce extends Model
         'titre',
         'image',
         'descriptif',
-        'etat'
+        'etat',
+        'createur'
     ];
+    protected $primaryKey = 'id';
 
 
     public function user()

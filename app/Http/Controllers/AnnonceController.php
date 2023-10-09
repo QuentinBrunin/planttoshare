@@ -5,47 +5,85 @@ namespace App\Http\Controllers;
 use App\Models\Annonce;
 use Illuminate\Http\Request;
 
-
 class AnnonceController extends Controller
 {
-    public function index()
+    public function index(){
+        $user = auth()->user();
+        $annonces = $user->annonces;
+        return view('profil.annonces.index',['annonces' =>$annonces]);
+    }
+    public function create()
     {
-        return view('forms.createAnnonce');
+        return view('profil.annonces.create');
     }
 
     public function store(Request $request)
     {
-        $request->validate([
+        $data =$request->validate([
             'titre' => 'required|max:150',
             'descriptif' => 'required|max:550',
             'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'etat' => 'required'
         ]);
-        if ($request->hasFile('image')) {
-            // Vérifier si le fichier a été téléchargé correctement
-            if ($request->file('image')->isValid()) {
-                // Stocker le fichier uniquement s'il est valide
-                $imagePath = $request->file('image')->store('dossier_images');
-            } else {
-                // Gérez l'erreur de fichier invalide ici
-                dd("Le fichier n'est pas valide.");
-            }
-        } else {
-            // Gérez le cas où aucun fichier n'a été téléchargé
-            dd("Aucun fichier n'a été téléchargé.");
+
+        $image =$data['image'];
+        if($image != null && !$image->getError()){
+            $data['image'] =$image->store('dossier_images','public');
         }
 
         $etat = $request->input('etat');
+        $user =auth()->user();
+        $createur = $user->id;
 
-        $annonce = Annonce::create([
+        Annonce::create([
             'titre' => $request->titre,
             'descriptif' => $request->descriptif,
-            'image' => $imagePath,
-            'etat' => $etat
+            'image' => $data['image'],
+            'etat' => $etat,
+            'createur' =>$createur
             
         ]);
 
-        return redirect()->route('createAnnonce')
+        return redirect()->route('mesAnnonces')
             ->with('succes_create_annonce', 'Vôtre annonce à été créee avec succés ! ');
     }
+
+    public function update(Annonce $annonce, Request $request)
+    {
+        $request->validate([
+            'titre' => 'required|max:150',
+            'descriptif' => 'required|max:550',
+            'image' => 'image|mimes:jpeg,png,jpg|max:2048',
+            'etat' => 'required'
+        ]);
+
+        $annonce->titre = $request->input('titre');
+        $annonce->descriptif = $request->input('descriptif');
+        $annonce->etat = $request->input('etat');
+
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            if (!$image->getError()) {
+                $annonce->image = $image->store('dossier_images', 'public');
+            }
+        }
+
+        $annonce->save();
+
+        return redirect()->route('mesAnnonces')
+        ->with('succes_update_annonce', 'Annonce mise à jour avec succès !');
+    }
+
+
+    public function destroy($id)
+    {
+        $annonce = Annonce::find($id);
+        if ($annonce) {
+            $annonce->delete();
+            return redirect()->route('mesAnnonces')->with('successSupression', 'Annonce supprimée avec succès.');
+        } 
+    }
+
+
 }
