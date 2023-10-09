@@ -9,10 +9,21 @@ class Annonce extends Model
 {
     use HasFactory;
 
-    public function produits()
-    {
-        return $this->hasOne(Produit::class);
-    }
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<string>
+     */
+    protected $fillable = [
+        'titre',
+        'image',
+        'descriptif',
+        'etat',
+        'createur'
+    ];
+    protected $primaryKey = 'id';
+
+
     public function user()
     {
         return $this->belongsTo(Utilisateur::class, 'localisation');
