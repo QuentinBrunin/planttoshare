@@ -46,7 +46,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 Route::middleware(['auth',])->group(function () {
 
     Route::get('profil/infos', [ProfilController::class, 'index'])->name('InfosProfil');
-    Route::put('profil/infos/modifier/{id}', [ProfilController::class,'update'])->name('modifierProfil');
+    Route::put('profil/infos/modifier/{user}', [ProfilController::class,'update'])->name('modifierProfil');
 
     Route::get('/completerProfil', [ProfilController::class, 'completerProfil'])->name('completerProfil');
 

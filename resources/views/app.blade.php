@@ -27,7 +27,14 @@
                             @endif
 
                                 <li class="btn_annonce"><a class="btn_create_annonce" href="{{ route('createAnnonce')}}">Créer une annonce</a></li>
-                                <a onclick="openMenuDrop()" href="#" id="openMenu" class="menu_dropdown  "> {{ucfirst(auth()->user()->prenom) }}.{{ ucfirst(auth()->user()->nom[0]) }} </a>
+                                <a onclick="openMenuDrop()" href="#" id="openMenu" class="menu_dropdown  ">
+                                    @if (auth()->user()->pseudo !=null)
+                                        {{ucfirst(auth()->user()->pseudo) }}
+                                    @else    
+                                    {{ucfirst(auth()->user()->prenom) }}.{{ ucfirst(auth()->user()->nom[0]) }}
+                                    @endif
+                                    </a>
+
                                     <div id="myMenuDropDown" class="user-dropdown">
                                         <img onclick="closeMenuDrop()" src="./img/croix.png" alt="Fermetture du menu" class="close" id="closeMenu">
                                         <ul>
@@ -38,6 +45,7 @@
                                             <li><a href="{{ route('logout') }}">Déconnexion</a></li>
                                         </ul>
                                     </div>
+                                    <img class="avatar-banniere" src="{{ asset('img/avatar/' . Auth::user()->photo_profil) }} "  alt="Mon avatar">
                         @else
                             <li class="btn_annonce"><a class="btn_create_annonce" href="login">Créer une annonce</a></li>
                             <li class="register"><a href="{{ route('register') }}">S'inscrire </a></li>

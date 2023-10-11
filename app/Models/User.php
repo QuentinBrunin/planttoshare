@@ -23,8 +23,10 @@ class User extends Authenticatable
         'email',
         'password',
         'admin',
-        'ville', 
-        'code_postal'
+        'ville',
+        'code_postal',
+        'photo_profil',
+        'pseudo'
     ];
 
     protected $primaryKey = 'id';
@@ -50,7 +52,6 @@ class User extends Authenticatable
 
     public function annonces()
     {
-        return $this->hasMany(Annonce::class, 'createur'); 
+        return $this->hasMany(Annonce::class, 'createur');
     }
-
 }

@@ -10,30 +10,32 @@ class ProfilController extends Controller
 
     public function index()
     {
-        $userId = session('user_id');
-        return view('profil.MonProfilInfos', ['userId' => $userId]);
+        $user = auth()->user();
+        return view('profil.profil', ['user' => $user]);
     }
 
-    public function update(Request $request,$userId)
+    public function update(User $user, Request $request)
     {
-        $data = $request->validate([
+        $request->validate([
             'adresse' => 'required|max:550',
             'code_postal' => 'required|max:550',
             'ville' => 'required|max:250',
-            
+            'pseudo' =>'max:50'
         ]);
-        $user = User::findOrFail($userId);
 
-        $user = User::findOrFail($userId);
+        $user->adresse = $request->input('adresse');
+        $user->code_postal = $request->input('code_postal');
+        $user->ville = $request->input('ville');
+        $user->pseudo =$request->input('pseudo');
 
-        $user->adresse = $data['adresse'];
-        $user->code_postal = $data['code_postal'];
-        $user->ville = $data['ville'];
+        if ($request->has('photo_profil')) {
+            $user->photo_profil = $request->input('photo_profil');
+        }
 
         $user->profil_completed = true;
         $user->save();
 
         return redirect()->route('InfosProfil')
-        ->with('succes_update_profil', 'Votre profil a été mis à jour!');
+            ->with('succes_update_profil', 'Votre profil a été mis à jour!');
     }
 }

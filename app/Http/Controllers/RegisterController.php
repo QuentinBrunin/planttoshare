@@ -20,11 +20,14 @@ class RegisterController extends Controller
             'password'=>'required|min:8'
         ]);
 
+        $avatarDefaut='avatarDef.png';
+
         $user = User::create([
             'nom' =>$request->nom,
             'prenom' => $request->prenom,
             'email' => $request->email,
-            'password' => bcrypt($request->password)
+            'password' => bcrypt($request->password),
+            'photo_profil'=>$avatarDefaut
         ]);
 
     
