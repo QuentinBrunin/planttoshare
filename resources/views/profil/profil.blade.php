@@ -1,6 +1,7 @@
-@extends ('admin.index')
+@extends('profil.dashboard')
 
 @section ('content')
+
 
         @if(session('message_complete_profil'))
         <div class="alert alert-success">
@@ -114,7 +115,46 @@
 @endsection
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+    /* Utilisation de l'api */
+$(document).ready(function(){
+            const apiUrl ='https://geo.api.gouv.fr/communes?codePostal=';
+            const format = '&format=json';
 
+            let code_postal = $('#code_postal');
+            let ville = $('#ville');
+            let error_message = $('#error-message');
+
+            $(code_postal).on('blur',function(){
+                let code = $(this).val();
+                //console.log(code);
+                let url = apiUrl+code+format;
+                //console.log(url);
+
+                fetch(url,{method:'get'}).then(response => response.json()).then(results =>{
+                    $(ville).find('option').remove();
+                    if(results.length){
+                        $(error_message).text('').hide();
+                        results.forEach(value =>{
+                            console.log(value.nom);
+                            $(ville).append('<option value ="'+value.nom+'">'+value.nom+'</option>');
+                        });
+                    }else{
+                        if($(code_postal).val()){
+                            console.log('Erreur de code postal.');
+                            $(error_message).text('Aucune commune avec ce code postal.').show();
+                        }
+                        else{
+                            $(error_message).text('').hide();
+                        }
+                    }
+                }).catch(err =>{
+                    console.log(err);
+                    $(ville).find('option').remove();
+                });
+            });
+});
+        
+/*modales*/        
     document.addEventListener('DOMContentLoaded', function() {
     // Fonction pour ouvrir la modal
     function openModal() {
@@ -168,43 +208,3 @@ avatarOptions.forEach(function(avatar) {
 });
 
 </script>
-
-    <script>
-        $(document).ready(function(){
-            const apiUrl ='https://geo.api.gouv.fr/communes?codePostal=';
-            const format = '&format=json';
-
-            let code_postal = $('#code_postal');
-            let ville = $('#ville');
-            let error_message = $('#error-message');
-
-            $(code_postal).on('blur',function(){
-                let code = $(this).val();
-                //console.log(code);
-                let url = apiUrl+code+format;
-                //console.log(url);
-
-                fetch(url,{method:'get'}).then(response => response.json()).then(results =>{
-                    $(ville).find('option').remove();
-                    if(results.length){
-                        $(error_message).text('').hide();
-                        results.forEach(value =>{
-                            console.log(value.nom);
-                            $(ville).append('<option value ="'+value.nom+'">'+value.nom+'</option>');
-                        });
-                    }else{
-                        if($(code_postal).val()){
-                            console.log('Erreur de code postal.');
-                            $(error_message).text('Aucune commune avec ce code postal.').show();
-                        }
-                        else{
-                            $(error_message).text('').hide();
-                        }
-                    }
-                }).catch(err =>{
-                    console.log(err);
-                    $(ville).find('option').remove();
-                });
-            });
-        });
-    </script>

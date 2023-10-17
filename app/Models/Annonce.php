@@ -20,7 +20,9 @@ class Annonce extends Model
         'descriptif',
         'etat',
         'createur',
-        'categorie_id'
+        'categorie_id',
+        'ville_retrait',
+        'code_postal_retrait'
     ];
     protected $primaryKey = 'id';
 
@@ -31,5 +33,9 @@ class Annonce extends Model
     public function createur()
     {
         return $this->belongsTo(User::class, 'createur');
+    }
+    public function getEncodedIdAttribute()
+    {
+        return base64_encode($this->id);
     }
 }

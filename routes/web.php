@@ -54,6 +54,7 @@ Route::middleware(['auth',])->group(function () {
     Route::get('profil/annonces', [AnnonceController::class, 'index'])->name('mesAnnonces');
     Route::get('profil/annonce/create', [AnnonceController::class, 'create'])->name('createAnnonce');
     Route::post('profil/annonce/create', [AnnonceController::class, 'store']);
+    Route::get('profil/annonce/{id}', [AnnonceController::class, 'show'])->name('annonce');
     Route::put('profil/annonces/modifier/{annonce}',[AnnonceController::class,'update'])->name('modifierAnnonce');
     Route::delete('/annonces/supprimer/{id}', [AnnonceController::class, 'destroy'])->name('supprimerAnnonce');
 });

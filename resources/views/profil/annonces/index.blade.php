@@ -1,5 +1,4 @@
-@extends('admin.index')
-
+@extends('profil.dashboard')
 @section('content')
     <h2>Mes annonces</h2>
     @if(session('successSupression'))
@@ -70,6 +69,15 @@
                                     <label for="descriptif">Descriptif</label>
                                     <textarea class="form-control-update" id="descriptif" name="descriptif" rows="4">{{ old('descriptif', $annonce->descriptif) }}</textarea>
                                 </div>
+                                <div class="form-group_update">
+                                    <label for="retrait_produit">Ou retirer le don ?</label>
+                                    <label for="code_postal_retrait">Code Postal</label>
+                                    <input type="text" id="code_postal_retrait" class="form-control" name="code_postal_retrait" required autofocus value="{{ old('code_postal_retrait', $annonce->code_postal_retrait) }}">
+                                    <label for="ville_retrait">Ville</label>
+                                    <select class="form-control" name="ville_retrait" id="ville_retrait"  >     
+                                    <option >{{ old('ville_retrait', $annonce->ville_retrait) }}</option>
+                                </select>
+                                </div>
                                 <div class="form-group-update">
                                     <label for="etat">Etat</label>
                                     <div>
@@ -79,9 +87,7 @@
                                         
                                         <input type="radio" name="etat" value="A consommer rapidement" {{ $annonce->etat == 'A consommer rapidement' ? 'checked' : '' }}>A consommer rapidement
                                     </div>
-
                                 </div>
-
                             <button type="submit" class="btn_valider_modif">
                                 Modifier l'annonce
                             </button>
@@ -230,5 +236,51 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    /*Utilisation de l'api */
+$(document).ready(function(){
+    const apiUrl = 'https://geo.api.gouv.fr/communes?codePostal=';
+    const format = '&format=json';
 
+    // Sélectionnez tous les éléments code_postal_retrait et ville_retrait
+    var code_postal_retraits = document.querySelectorAll('[id^="code_postal_retrait"]');
+    var ville_retraits = document.querySelectorAll('[id^="ville_retrait"]');
+    var error_messages = document.querySelectorAll('[id^="error-message"]');
+
+    code_postal_retraits.forEach(function (code_postal_retrait, index) {
+        var ville_retrait = ville_retraits[index];
+        var error_message = error_messages[index];
+
+        $(code_postal_retrait).on('blur', function () {
+            let code = $(this).val();
+            let url = apiUrl + code + format;
+
+            fetch(url, { method: 'get' })
+                .then(response => response.json())
+                .then(results => {
+                    $(ville_retrait).find('option').remove();
+                    if (results.length) {
+                        $(error_message).text('').hide();
+                        results.forEach(value => {
+                            $(ville_retrait).append('<option value="' + value.nom + '">' + value.nom + '</option>');
+                        });
+                    } else {
+                        if ($(code_postal_retrait).val()) {
+                            console.log('Erreur de code postal.');
+                            $(error_message).text('Aucune commune avec ce code postal.').show();
+                        } else {
+                            $(error_message).text('').hide();
+                        }
+                    }
+                })
+                .catch(err => {
+                    console.log(err);
+                    $(ville_retrait).find('option').remove();
+                });
+        });
+    });
+});
+
+</script>
 @endsection

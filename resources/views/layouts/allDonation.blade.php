@@ -18,7 +18,8 @@
     <div id="filtered-annonces" class="annonces-result">
         @foreach($annonces as $annonce)
             <div class="gr-img-result" data-category="{{$annonce->categorie->nom}}">
-                <img class="img-result" src="{{ asset('/storage/' . $annonce->image) }} " alt="{{$annonce->tire}}">
+                <a href="{{ route('annonce', ['id' => $annonce->encoded_id]) }}"><img class="img-result" src="{{ asset('/storage/' . $annonce->image) }} " alt="{{$annonce->titre}}"></a>
+                
                 <h3 class="title-img-result">{{$annonce->titre}}</h3>
             </div>
         @endforeach
