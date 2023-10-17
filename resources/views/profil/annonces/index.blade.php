@@ -52,6 +52,15 @@
                                     <label for="titre">Que donnez-vous ?</label>
                                     <input type="text" id="titre" class="form-control-update" name="titre" required autofocus value="{{ old('titre', $annonce->titre) }}">
                                 </div>
+                                <div class="form-group">
+                                    <label for="categories">Catégorie</label>
+                                    <select name="categorie" id="categorie" class="form-control">
+                                        @foreach ($categories as $categorie)
+                                            <option value="{{ $categorie->id }}">{{ $categorie->nom }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
                                 <div class="form-group-update">
                                     <label for="image">Image</label>
                                     <input type="file" id="image" class="form-control-update" name="image" accept="image/*" onchange="previewImage(this.$annonce(id));">

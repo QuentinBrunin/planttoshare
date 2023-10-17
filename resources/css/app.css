@@ -276,54 +276,39 @@ header nav ul li {
 }
 
 /* ANNONCE */
-
-.contain_annonce {
-    width: 20%;
-    margin: auto;
+.flex{
+    display: flex;
+}
+.contain_annonce{
     display: flex;
     flex-direction: column;
-    font-family: "Poppins";
-    height: 600px;
+    width: 18%;
+    margin: auto;
+    font-family: 'Poppins';
+    height: 500px;
+    
 }
-
-.contain_annonce h3 {
-    margin-top: -5px;
+.derniere-annonces{
+    width: 40vh;
+    height: 25vh;
+}
+.contain_annonce h3{
     text-align: center;
 }
-.avatar_auteur, .note_etoile{
-    display: flex; 
+.annonce_text{
+    
+    display: flex;
+    justify-content: space-around;
+    margin-top: -20px;
+    margin-right: -70px;
 }
-
-.avatar_auteur {
-    margin-left: -16px;
-    width: 50%;
-}
-
-.avatar_auteur img {
-    width: 50px;
-}
-
 .note_etoile{
-    width: 70%;
+    display: flex;
     justify-content: end;
-    margin-right: -14px;
 }
-
-.note_etoile img {
+.note_etoile img{
     width: 50px;
-    margin-top: -4px;
 }
-
-.annonce_text {
-    margin-top: -70px;
-    display: flex;
-}
-
-.flex {
-    display: flex;
-}
-
-
 /* PARTIE BLOG BANNIERE */
 
 .container_banniere_blog{
@@ -450,6 +435,7 @@ footer a{
 .alert{
     color: red;
 }
+
 .alert_inscription{
     color: black;
     font-family: 'Poppins';
@@ -688,6 +674,15 @@ footer a{
 .formulaire-profil input:not([readonly]){
     background-color: rgb(220, 239, 255);
 }
+.form-control-profil-select{
+    width: 350px;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: rgb(220, 239, 255);
+    border: 0;
+    font-size: 16px;
+    font-family: 'Poppins';
+}
 .formulaire-profil h3{
     padding-left: 40px;
     padding-bottom: 20px;
@@ -876,4 +871,50 @@ border-radius: 10px;
 #selected-avatar-preview {
     width: 200px;
     height: 200px;
+}
+/* css annonces filtrées*/ 
+.img-menu-filter{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    
+} 
+.img-filter{
+    width: 7vh;  
+    margin-left: 29vh;
+}
+.container-filter{
+    
+    display: flex;
+    width: 87%;
+    margin-top: 20px;
+} 
+.filter{
+    border: 1px solid black;
+    width: 40%;
+}
+.annonces-result{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);  
+    grid-row-gap: 100px;
+    grid-column-gap: 20px;
+    width: 100%;
+    margin-top: 50px;
+    margin-left: 100px;
+
+}
+.img-result{
+    
+    width: 320px;
+    height: 286px;
+    margin: auto;
+    object-fit: cover;
+    border-radius: 15px;
+    
+}
+.gr-img-result {
+    margin: auto; 
+}
+.title-img-result{
+    text-align: center;
 }

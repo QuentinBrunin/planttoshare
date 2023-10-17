@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AnnonceController;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\ProfilController;
 
 use Illuminate\Http\Request;
@@ -25,11 +26,11 @@ Route::get('/', function () {
 });
 
 
-Route::get('/', function () {
-    return view('layouts.main');
-})->name('main');
 
 
+Route::get('/',[Controller::class,'welcolm'])->name('main');
+Route::get('/dons',[Controller::class,'index'])->name('dons');
+Route::get('/getFilteredAnnonces/{category}', [AnnonceController::class, 'getFilteredAnnonces'])->name('getFilteredAnnonces');
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
 

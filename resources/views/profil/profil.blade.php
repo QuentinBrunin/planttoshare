@@ -1,6 +1,7 @@
 @extends ('admin.index')
 
 @section ('content')
+
         @if(session('message_complete_profil'))
         <div class="alert alert-success">
             {{ session('message_complete_profil') }}
@@ -13,6 +14,7 @@
     @endif
 
     <h2 class="monProfil">Mon profil</h2>
+    <div style="display: none; color:#f55;text-align:center;" id="error-message"></div>
     <div class="container-profil">
         <div class="formulaire-profil">
             <h3>Informations personnelles</h3>
@@ -47,7 +49,10 @@
                 
                 <div class="form-group-profil">
                     <label for="ville">Ville</label>
-                    <input type="text" id="ville" class="form-control-profil" name="ville" required autofocus value="{{ Auth::user()->ville }}">
+                    <select class="form-control-profil-select" name="ville" id="ville"  >     
+                        <option >{{ Auth::user()->ville }}</option>
+                    </select>
+                
                 </div>
 
                 <button type="submit" class="btn_profil">
@@ -107,7 +112,9 @@
         </form>
     </div>
 @endsection
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+
     document.addEventListener('DOMContentLoaded', function() {
     // Fonction pour ouvrir la modal
     function openModal() {
@@ -161,3 +168,43 @@ avatarOptions.forEach(function(avatar) {
 });
 
 </script>
+
+    <script>
+        $(document).ready(function(){
+            const apiUrl ='https://geo.api.gouv.fr/communes?codePostal=';
+            const format = '&format=json';
+
+            let code_postal = $('#code_postal');
+            let ville = $('#ville');
+            let error_message = $('#error-message');
+
+            $(code_postal).on('blur',function(){
+                let code = $(this).val();
+                //console.log(code);
+                let url = apiUrl+code+format;
+                //console.log(url);
+
+                fetch(url,{method:'get'}).then(response => response.json()).then(results =>{
+                    $(ville).find('option').remove();
+                    if(results.length){
+                        $(error_message).text('').hide();
+                        results.forEach(value =>{
+                            console.log(value.nom);
+                            $(ville).append('<option value ="'+value.nom+'">'+value.nom+'</option>');
+                        });
+                    }else{
+                        if($(code_postal).val()){
+                            console.log('Erreur de code postal.');
+                            $(error_message).text('Aucune commune avec ce code postal.').show();
+                        }
+                        else{
+                            $(error_message).text('').hide();
+                        }
+                    }
+                }).catch(err =>{
+                    console.log(err);
+                    $(ville).find('option').remove();
+                });
+            });
+        });
+    </script>

@@ -45,72 +45,31 @@
             </div>
         </div>
         <div class="redirection_dons">
-            <a href="">Retrouvez tous les dons en cliquant ici</a>
+            <a href="{{route('dons')}}">Retrouvez tous les dons en cliquant ici</a>
         </div>
     </div>
 
     <!-- ANNONCE -->
 
     <div class="flex">
+        @foreach($annonces as $annonce)
         <div class="contain_annonce">
-            <img src="./img/panier.png" alt="">
+            <img class="derniere-annonces" src="{{ asset('/storage/' . $annonce->image) }} " alt="{{$annonce->tire}}">
+            <h3>{{$annonce->titre}}</h3>
             <div class="annonce_text">
                 <div class="avatar_auteur">
-                    <img src="./img/avatar.png" alt="">
-                    <p>Quentin.B</p>
+                    <!--image avatar auteur -->
+                    <p>{{$annonce->auteur_nom}}</p>
                 </div>
                 <div class="note_etoile">
                     <p>4.5</p>
                     <img src="./img/etoile.png" alt="">
                 </div>
+                
             </div>
-            <h3>Ceci est un titre provisoire</h3>
+            
         </div>
-
-        <div class="contain_annonce">
-            <img src="./img/panier.png" alt="">
-            <div class="annonce_text">
-                <div class="avatar_auteur">
-                    <img src="./img/avatar.png" alt="">
-                    <p>Quentin.B</p>
-                </div>
-                <div class="note_etoile">
-                    <p>4.5</p>
-                    <img src="./img/etoile.png" alt="">
-                </div>
-            </div>
-            <h3>Ceci est un titre provisoire</h3>
-        </div>
-
-        <div class="contain_annonce">
-            <img src="./img/panier.png" alt="">
-            <div class="annonce_text">
-                <div class="avatar_auteur">
-                    <img src="./img/avatar.png" alt="">
-                    <p>Quentin.B</p>
-                </div>
-                <div class="note_etoile">
-                    <p>4.5</p>
-                    <img src="./img/etoile.png" alt="">
-                </div>
-            </div>
-            <h3>Ceci est un titre provisoire</h3>
-        </div>
-
-        <div class="contain_annonce">
-            <img src="./img/panier.png" alt="">
-            <div class="annonce_text">
-                <div class="avatar_auteur">
-                    <img src="./img/avatar.png" alt="">
-                    <p>Quentin.B</p>
-                </div>
-                <div class="note_etoile">
-                    <p>4.5</p>
-                    <img src="./img/etoile.png" alt="">
-                </div>
-            </div>
-            <h3>Ceci est un titre provisoire</h3>
-        </div>
+        @endforeach
     </div>
 
     <!-- Partie Blog -->
@@ -130,12 +89,12 @@
                 <h3>Retrouvez les conseils de nos membres</h3>
             </div>
         </div>
-      
     </div>
 
     <!-- ARTICLE BLOG -->
-
+    
     <div class="flex">
+        
         <div class="contain_annonce">
             <img src="./img/panier.png" alt="">
             <div class="annonce_text">

@@ -19,18 +19,14 @@ class Annonce extends Model
         'image',
         'descriptif',
         'etat',
-        'createur'
+        'createur',
+        'categorie_id'
     ];
     protected $primaryKey = 'id';
 
-
-    public function user()
-    {
-        return $this->belongsTo(Utilisateur::class, 'localisation');
-    }
     public function categorie()
     {
-        return $this->belongsTo(Categorie::class);
+        return $this->belongsTo(Categorie::class,'categorie_id');
     }
     public function createur()
     {

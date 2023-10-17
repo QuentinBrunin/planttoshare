@@ -31,6 +31,14 @@
                         <input type="text" id="titre" class="form-control" name="titre" required autofocus>
                     </div>
                     <div class="form-group">
+                        <label for="categories">Catégorie</label>
+                        <select name="categorie" id="categorie" class="form-control">
+                            @foreach ($categories as $categorie)
+                                <option value="{{ $categorie->id }}">{{ $categorie->nom }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="image">Image</label>
                         <input type="file" id="image" class="form-control" name="image" required>
                     </div>

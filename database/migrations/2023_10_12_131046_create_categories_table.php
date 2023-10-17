@@ -13,11 +13,8 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->boolean('fruits');
-            $table->boolean('legumes');
-            $table->boolean('plantes');
-            $table->boolean('graines');
             $table->timestamps();
+            $table->string('nom');
         });
     }
 
